@@ -1,0 +1,32 @@
+<!-- 
+* Autor : Nicolas Boisclair
+* Version : 1.0.0 
+-->
+
+<div class="selecteurBateau  container  rounded  bg-light">
+    <h1 class="display-6">Modèle du bateau</h1>
+    <form class="selecteurBateau__form">
+        <div class="selecteurBateau__form__recherche">
+            <div class="selecteurBateau__form__recherche__container">
+                <label for="">Rechercher</label>
+                <input placeholder="ex : fee" list="bateaux" type="text" class="form-control" (keyup)="obtenirListeBateaux($event.target)" (change)="obtenirLongueurBateauChoisi($event.target)">
+                <datalist id="bateaux">
+                    <option *ngFor="let bateau of bateaux;" [value]="bateau.name" ></option>
+                </datalist>
+            </div>
+            <div class="selecteurBateau__form__recherche__container">
+                <label for="">Longueur (M)</label>
+                <input name="lengthm" type="text" class="form-control" [(ngModel)]="bateau.lengthm">
+            </div>
+        </div>
+        <div class="selecteurBateau__form__button">
+            <div class="selecteurBateau__form__button__container">
+                <button type="button" class="btn  btn-dark  btn__selecteurBateau__confirmer" (click)="bateauPret()" >Confirmer</button>
+                <button type="button" class="btn  btn-dark  btn__selecteurBateau__next" routerLink="/bateau/noref">
+                    <img src="assets/images/chevron-right-solid.svg" alt="chevron right">
+                    <div class="info_chevron  bg-dark">Aucun bateau ?</div>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,182 @@
+<!-- 
+* Autor : Nicolas Boisclair
+* Version : 1.0.0 
+-->
+
+<div class="listeVoile  container  rounded  bg-light">
+    <h1 class="display-6">Liste des voiles</h1>
+    <form class="listeVoile__form">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-grand-voiles-tab" data-bs-toggle="tab" data-bs-target="#nav-grand-voiles" type="button" role="tab" aria-controls="nav-grand-voiles" aria-selected="true">Grand-voiles</button>
+              <button class="nav-link" id="nav-genois-tab" data-bs-toggle="tab" data-bs-target="#nav-genois" type="button" role="tab" aria-controls="nav-genois" aria-selected="false">Génois</button>
+              <button class="nav-link" id="nav-spi-tab" data-bs-toggle="tab" data-bs-target="#nav-spi" type="button" role="tab" aria-controls="nav-spi" aria-selected="false">Spi</button>
+              <!-- ACCESSOIRES N'EST ACTUELLEMENT PAS DISPONIBLE -->
+              <!-- <button class="nav-link" id="nav-accessoires-tab" data-bs-toggle="tab" data-bs-target="#nav-accessoires" type="button" role="tab" aria-controls="nav-accessoires" aria-selected="false">Accessoires</button> -->
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-grand-voiles" role="tabpanel" aria-labelledby="nav-grand-voiles-tab">
+                <div class="listeVoile__form__contenu__tab">
+                    <h4>Grand-voile lattée</h4>
+                    <div class="listeVoile__form__contenu__tab__type" *ngFor="let voile of voilesParTypes('GVL');">
+                        <h6>{{voile.name}}</h6>
+                        <div class="listeVoile__form__contenu__tab__type__container">
+                            <div class="listeVoile__form__contenu__tab__description">
+                                <img src="assets/images/gvl.png" alt="image type">
+                                <p [innerHTML]="voile.description"></p>
+                            </div>
+                            <div class="listeVoile__form__contenu__tab__configurer">
+                                <p>À partir de</p>
+                                <p class="prix">{{voile.price.unitPrice}} $</p>
+                                <button type="button" class="btn btn-dark">Configurer</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="listeVoile__form__contenu__tab">
+                    <h4>Grand-voile semi-lattée</h4>
+                    <div class="listeVoile__form__contenu__tab__type" *ngFor="let voile of voilesParTypes('GVSL');">
+                        <h6>{{voile.name}}</h6>
+                        <div class="listeVoile__form__contenu__tab__type__container">
+                            <div class="listeVoile__form__contenu__tab__description">
+                                <img src="assets/images/gvl.png" alt="image type">
+                                <p [innerHTML]="voile.description"></p>
+                            </div>
+                            <div class="listeVoile__form__contenu__tab__configurer">
+                                <p>À partir de</p>
+                                <p class="prix">{{voile.price.unitPrice}} $</p>
+                                <button type="button" class="btn btn-dark">Configurer</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="listeVoile__form__contenu__tab">
+                    <h4>Grand-voile sur enrouleur</h4>
+                    <div class="listeVoile__form__contenu__tab__type" *ngFor="let voile of voilesParTypes('GVE');">
+                        <h6>{{voile.name}}</h6>
+                        <div class="listeVoile__form__contenu__tab__type__container">
+                            <div class="listeVoile__form__contenu__tab__description">
+                                <img src="assets/images/gvl.png" alt="image type">
+                                <p [innerHTML]="voile.description"></p>
+                            </div>
+                            <div class="listeVoile__form__contenu__tab__configurer">
+                                <p>À partir de</p>
+                                <p class="prix">{{voile.price.unitPrice}} $</p>
+                                <button type="button" class="btn btn-dark">Configurer</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-genois" role="tabpanel" aria-labelledby="nav-genois-tab">
+                <div class="listeVoile__form__contenu__tab">
+                    <h4>Génois sur mousquetons</h4>
+                    <div class="listeVoile__form__contenu__tab__type" *ngFor="let voile of voilesParTypes('GM');">
+                        <h6>{{voile.name}}</h6>
+                        <div class="listeVoile__form__contenu__tab__type__container">
+                            <div class="listeVoile__form__contenu__tab__description">
+                                <img src="assets/images/gvl.png" alt="image type">
+                                <p [innerHTML]="voile.description"></p>
+                            </div>
+                            <div class="listeVoile__form__contenu__tab__configurer">
+                                <p>À partir de</p>
+                                <p class="prix">{{voile.price.unitPrice}} $</p>
+                                <button type="button" class="btn btn-dark">Configurer</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="listeVoile__form__contenu__tab">
+                    <h4>Génois sur enrouleur</h4>
+                    <div class="listeVoile__form__contenu__tab__type" *ngFor="let voile of voilesParTypes('GE');">
+                        <h6>{{voile.name}}</h6>
+                        <div class="listeVoile__form__contenu__tab__type__container">
+                            <div class="listeVoile__form__contenu__tab__description">
+                                <img src="assets/images/gvl.png" alt="image type">
+                                <p [innerHTML]="voile.description"></p>
+                            </div>
+                            <div class="listeVoile__form__contenu__tab__configurer">
+                                <p>À partir de</p>
+                                <p class="prix">{{voile.price.unitPrice}} $</p>
+                                <button type="button" class="btn btn-dark">Configurer</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-spi" role="tabpanel" aria-labelledby="nav-spi-tab">
+                <div class="listeVoile__form__contenu__tab">
+                    <h4>Spi symétrique</h4>
+                    <div class="listeVoile__form__contenu__tab__type" *ngFor="let voile of voilesParTypes('SS');">
+                        <h6>{{voile.name}}</h6>
+                        <div class="listeVoile__form__contenu__tab__type__container">
+                            <div class="listeVoile__form__contenu__tab__description">
+                                <img src="assets/images/gvl.png" alt="image type">
+                                <p [innerHTML]="voile.description"></p>
+                            </div>
+                            <div class="listeVoile__form__contenu__tab__configurer">
+                                <p>À partir de</p>
+                                <p class="prix">{{voile.price.unitPrice}} $</p>
+                                <button type="button" class="btn btn-dark">Configurer</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="listeVoile__form__contenu__tab">
+                    <h4>Spi asymétrique</h4>
+                    <div class="listeVoile__form__contenu__tab__type" *ngFor="let voile of voilesParTypes('SA');">
+                        <h6>{{voile.name}}</h6>
+                        <div class="listeVoile__form__contenu__tab__type__container">
+                            <div class="listeVoile__form__contenu__tab__description">
+                                <img src="assets/images/gvl.png" alt="image type">
+                                <p [innerHTML]="voile.description"></p>
+                            </div>
+                            <div class="listeVoile__form__contenu__tab__configurer">
+                                <p>À partir de</p>
+                                <p class="prix">{{voile.price.unitPrice}} $</p>
+                                <button type="button" class="btn btn-dark">Configurer</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="listeVoile__form__contenu__tab">
+                    <h4>Gennaker / code 0</h4>
+                    <div class="listeVoile__form__contenu__tab__type" *ngFor="let voile of voilesParTypes('GS');">
+                        <h6>{{voile.name}}</h6>
+                        <div class="listeVoile__form__contenu__tab__type__container">
+                            <div class="listeVoile__form__contenu__tab__description">
+                                <img src="assets/images/gvl.png" alt="image type">
+                                <p [innerHTML]="voile.description"></p>
+                            </div>
+                            <div class="listeVoile__form__contenu__tab__configurer">
+                                <p>À partir de</p>
+                                <p class="prix">{{voile.price.unitPrice}} $</p>
+                                <button type="button" class="btn btn-dark">Configurer</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <!-- ACCESSOIRES N'EST ACTUELLEMENT PAS DISPONIBLE -->
+            <!-- <div class="tab-pane fade" id="nav-accessoires" role="tabpanel" aria-labelledby="nav-accessoires-tab">
+                <div class="listeVoile__form__contenu__tab">
+                    <h4></h4>
+                    <hr>
+                </div>
+            </div> -->
+          </div>
+    </form>
+    <div class="liste__voile__back__btn">
+        <button type="button" class="btn btn-dark " routerLink="/bateau/noref" [state]="mesures" ><img src="assets/images/chevron-left-solid.svg" alt="chevron"></button>
+    </div>
+</div>
+

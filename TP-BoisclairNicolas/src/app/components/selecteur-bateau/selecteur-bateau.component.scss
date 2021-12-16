@@ -1,0 +1,112 @@
+/*
+* Autor : Nicolas Boisclair
+* Version : 1.0.0 
+*/
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1em;
+}
+
+h1 {
+	margin-bottom: 1em;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+input {
+	outline: none;
+}
+
+.selecteurBateau__form {
+	display: flex;
+	flex-direction: column;
+}
+
+.selecteurBateau__form__recherche {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 2em;
+}
+
+.selecteurBateau__form__recherche__container {
+	width: 45%;
+}
+
+.selecteurBateau__form__button {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 2em;
+}
+
+.selecteurBateau__form__button__container {
+	display: flex;
+	justify-content: space-between;
+	width: 65%;
+}
+
+.btn__selecteurBateau__confirmer {
+	padding: 0 2em;
+}
+
+.selecteurBateau__form__button__container button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 2.5em;
+}
+
+.selecteurBateau__form__button__container img {
+	height: 1em;
+	width: auto;
+}
+
+.info_chevron {
+	position: absolute;
+	border-radius: 3px;
+	padding: 6px;
+	opacity: 0;
+	transition: 0.2s;
+}
+
+.btn__selecteurBateau__next:hover .info_chevron {
+	display: flex;
+	opacity: 1;
+	transform: translateY(-110%);
+}
+
+@media only screen and (max-width: 545px) {
+	.container {
+		width: 100%;
+	}
+
+	.selecteurBateau__form__recherche {
+		padding: 0 1em;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.selecteurBateau__form__recherche__container {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+	
+	.selecteurBateau__form__button {
+		justify-content: center;
+		width: 100%;
+	}
+
+	.selecteurBateau__form__button__container {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.selecteurBateau__form__button__container button {
+		margin: 0 5px;
+	}
+}

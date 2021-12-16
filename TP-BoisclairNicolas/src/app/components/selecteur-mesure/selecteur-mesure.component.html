@@ -1,0 +1,166 @@
+<!-- 
+* Autor : Nicolas Boisclair
+* Version : 1.0.0 
+-->
+
+<div class="selecteurMesure  container  rounded  bg-light">
+    <h1 class="display-6">Mesures des voiles</h1>
+    <form name="formulaire__mesure"
+        id="formulaire__mesure"
+        class="selecteurMesure__form needs-validation"
+        [formGroup]="form"
+        (ngSubmit)="prochainComposant()">
+        <div class="selecteurMesure__container">
+            <div class="selecteurMesure__container__field">
+                <h5>Les grands-voiles</h5>
+                <div class="selecteurMesure__container__field__element">
+                    <label for="gvl">Grand-voile lattée</label>
+                    <div class="selecteurMesure__container__field__element__input">
+                        <input
+                            (change)="validationInput($event)"
+                            type="text"
+                            name="gvl"
+                            [(ngModel)]="bateau.sails.gvl"
+                            class="form-control form-control-sm"
+                            formControlName="gvl">
+                        <p class="bg-dark  text-light">M<sup>2</sup></p>
+                        <div class="invalid-feedback">*Chiffres acceptés</div>
+                    </div>
+                </div>
+                <div class="selecteurMesure__container__field__element">
+                    <label for="gvsl">Grand-voile semi-lattée</label>
+                    <div class="selecteurMesure__container__field__element__input">
+                        <input
+                            (change)="validationInput($event)"
+                            type="text"
+                            name="gvsl"
+                            [(ngModel)]="bateau.sails.gvsl"
+                            class="form-control form-control-sm"
+                            formControlName="gvsl">
+                        <p class="bg-dark  text-light">M<sup>2</sup></p>
+                        <div class="invalid-feedback">*Chiffres acceptés</div>
+                    </div>
+                </div>
+                <div class="selecteurMesure__container__field__element">
+                    <label for="gve">Grand-voile sur enrouleur</label>
+                    <div class="selecteurMesure__container__field__element__input">
+                        <input
+                            (change)="validationInput($event)"
+                            type="text"
+                            name="gve"
+                            [(ngModel)]="bateau.sails.gve"
+                            class="form-control  form-control-sm"
+                            formControlName="gve">
+                        <p class="bg-dark  text-light">M<sup>2</sup></p>
+                        <div class="invalid-feedback">*Chiffres acceptés</div>
+                    </div>
+                </div>
+            </div>
+            <div class="selecteurMesure__container__field">
+                <h5>Les voiles d'avant</h5>
+                <div class="selecteurMesure__container__field__element">
+                    <label for="gm">Génois sur mousquetons</label>
+                    <div class="selecteurMesure__container__field__element__input">
+                        <input
+                            (change)="validationInput($event)"
+                            type="text"
+                            name="gm"
+                            [(ngModel)]="bateau.sails.gm"
+                            class="form-control form-control-sm"
+                            formControlName="gm">
+                        <p class="bg-dark  text-light">M<sup>2</sup></p>
+                        <div class="invalid-feedback">*Chiffres acceptés</div>
+                    </div>
+                </div>
+                <div class="selecteurMesure__container__field__element">
+                    <label for="ge">Génois sur enrouleur</label>
+                    <div class="selecteurMesure__container__field__element__input">
+                        <input
+                            (change)="validationInput($event)"
+                            type="text"
+                            name="ge"
+                            [(ngModel)]="bateau.sails.ge"
+                            class="form-control form-control-sm"
+                            formControlName="ge">
+                        <p class="bg-dark  text-light">M<sup>2</sup></p>
+                        <div class="invalid-feedback">*Chiffres acceptés</div>
+                    </div>
+                </div>
+                <!-- La longueur du bateau, mais caché de l'utilisateur -->
+                <div class="selecteurMesure__container__field__element">
+                        <input
+                            type="hidden"
+                            name="lg"
+                            [(ngModel)]="bateau.lengthm"
+                            class="form-control form-control-sm"
+                            formControlName="lg">
+                </div>
+            </div>
+            <div class="selecteurMesure__container__field">
+                <h5>Les voiles de portant</h5>
+                <div class="selecteurMesure__container__field__element">
+                    <label for="ss">Spi symétrique</label>
+                    <div class="selecteurMesure__container__field__element__input">
+                        <input
+                            (change)="validationInput($event)"
+                            type="text"
+                            name="ss"
+                            [(ngModel)]="bateau.sails.ss"
+                            class="form-control form-control-sm"
+                            formControlName="ss">
+                        <p class="bg-dark  text-light">M<sup>2</sup></p>
+                        <div class="invalid-feedback">*Chiffres acceptés</div>
+                    </div>
+                </div>
+                <div class="selecteurMesure__container__field__element">
+                    <label for="sa">Spi asymétrique</label>
+                    <div class="selecteurMesure__container__field__element__input">
+                        <input
+                            (change)="validationInput($event)"
+                            type="text"
+                            name="sa"
+                            [(ngModel)]="bateau.sails.sa"
+                            class="form-control form-control-sm"
+                            formControlName="sa">
+                        <p class="bg-dark  text-light">M<sup>2</sup></p>
+                        <div class="invalid-feedback">*Chiffres acceptés</div>
+                    </div>
+                </div>
+                <div class="selecteurMesure__container__field__element">
+                    <label for="gs">Gennaker / code 0</label>
+                    <div class="selecteurMesure__container__field__element__input">
+                        <input
+                            (change)="validationInput($event)"
+                            type="text"
+                            name="gs"
+                            [(ngModel)]="bateau.sails.gs"
+                            class="form-control form-control-sm"
+                            formControlName="gs">
+                        <p class="bg-dark  text-light">M<sup>2</sup></p>
+                        <div class="invalid-feedback">*Chiffres acceptés</div>
+                    </div>
+                </div>
+            </div>
+            <div class="selecteurMesure__container__field">
+                <h5>Accessoires</h5>
+                <div class="selecteurMesure__container__field__element">
+                    <label for="">Longueur de la bôme</label>
+                    <div class="selecteurMesure__container__field__element__input">
+                        <!-- Pour cet input : [(ngModel)]="bateau.sails.?" formControlName="lb" Indisponible pour le moment -->
+                        <input
+                            (change)="validationInput($event)"
+                            type="text"
+                            name="lb"
+                            class="form-control form-control-sm">
+                        <p class="bg-dark  text-light">M<sup>2</sup></p>
+                        <div class="invalid-feedback">*Chiffres acceptés</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="selecteurMesure__buttons">
+            <button class="btn  btn-dark" routerLink="/"><img src="assets/images/chevron-left-solid.svg" alt="chevron"></button>
+            <button class="btn  btn-dark">Valider mes mesures</button>
+        </div>
+    </form>
+</div>

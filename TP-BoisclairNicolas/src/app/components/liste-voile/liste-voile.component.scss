@@ -1,0 +1,109 @@
+/*
+* Autor : Nicolas Boisclair
+* Version : 1.0.0 
+*/
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.listeVoile {
+    display:  flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.listeVoile h1 {
+    align-self: center;
+}
+
+.listeVoile__form {
+    width: 900px;
+    height: 400px;
+}
+
+.listeVoile__form nav {
+    height: 11%;
+}
+
+.listeVoile__form .nav-tabs {
+    height: 100%;
+}
+
+.listeVoile__form .tab-content {
+    height: 89%;
+    overflow-y: scroll;
+    padding: 1em;
+}
+
+.listeVoile__form__contenu__tab {
+    display: flex;
+    flex-direction: column;
+}
+
+.listeVoile__form__contenu__tab__type {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 2em;
+}
+
+.listeVoile__form__contenu__tab__type__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.listeVoile__form__contenu__tab__description {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    text-align: justify;
+}
+
+.listeVoile__form__contenu__tab__description img {
+    width: 80px;
+    height: auto;
+    margin-right: 2em;
+}
+
+.listeVoile__form__contenu__tab__description p {
+    margin-top: 1em;
+}
+
+.listeVoile__form__contenu__tab__configurer {
+    display: flex;
+    flex-direction: column;
+}
+
+.listeVoile__form__contenu__tab__configurer p {
+    margin-bottom: 10px;
+}
+    
+.prix {
+    font-weight: bold;
+}
+
+.liste__voile__back__btn { 
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+}
+
+.liste__voile__back__btn button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	height: 2.5em;
+}
+
+.liste__voile__back__btn img {
+	height: 1em;
+	width: auto;
+}
+
+@media only screen and (max-width: 991px) {
+    .listeVoile__form {
+        width: 700px;
+    }
+}

@@ -1,0 +1,109 @@
+/*
+* Autor : Nicolas Boisclair
+* Version : 1.0.0 
+*/
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1em;
+}
+
+h1 {
+	margin-bottom: 1em;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+input {
+    padding-right: 0 !important; // Enlever le css de bootstrap pour ne pas agrandir le input
+}
+
+input:invalid .invalid-feedback {
+    display: block;
+}
+
+.invalid-feedback {
+    position: absolute;
+    transform: translateY(120%);
+    width: fit-content;
+}
+
+.selecteurMesure__form {
+	display: flex;
+	flex-direction: column;
+}
+
+.selecteurMesure__container {
+    display: flex;
+}
+
+.selecteurMesure__container__field {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1em; 
+}
+
+.selecteurMesure__container__field__element {
+    display: flex;
+    flex-direction: column;
+    margin: 0.8em 0;
+}
+
+.selecteurMesure__container__field__element__input {
+    display: flex;
+}
+
+.selecteurMesure__container__field__element__input input {
+    width: 75%;
+}
+
+.selecteurMesure__container__field__element__input p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17%;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.selecteurMesure__buttons {
+    margin-top: 3em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.selecteurMesure__buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	height: 2.5em;
+}
+
+.selecteurMesure__buttons img {
+	height: 1em;
+	width: auto;
+}
+
+@media only screen and (max-width: 991px) {
+    .selecteurMesure__container{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .selecteurMesure__container__field{
+        margin-top: 1.5em;
+        flex-basis: 40%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .selecteurMesure__container__field{
+        flex-basis: 100%;
+    }
+}
